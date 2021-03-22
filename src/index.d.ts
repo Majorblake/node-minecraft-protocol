@@ -26,6 +26,7 @@ declare module 'minecraft-protocol' {
 		writeChannel(channel: any, params: any): void
 		on(event: 'error', listener: (error: Error) => void): this
 		on(event: 'packet', handler: (data: any, packetMeta: PacketMeta) => void): this
+		on(event: 'write_packet', handler: (data: any, state: States, packetName: string) => void): this
 		on(event: 'raw', handler: (data: any, packetMeta: PacketMeta) => void): this
 		on(event: 'session', handler: (session: any) => void): this
 		on(event: 'state', handler: (newState: States, oldState: States) => void): this

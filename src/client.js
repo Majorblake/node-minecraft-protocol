@@ -218,7 +218,7 @@ class Client extends EventEmitter {
     if (!this.serializer.writable) { return }
     debug('writing packet ' + this.state + '.' + name)
     debug(params)
-    this.emit('write_packet', this.state, name, params)
+    this.emit('write_packet', params, this.state, name)
     this.serializer.write({ name, params })
   }
 
